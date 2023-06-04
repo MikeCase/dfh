@@ -20,11 +20,11 @@ def format_bytes(size):
         n += 1
     return size, power_labels[n]+'B'
 
-def parse_output(output):
-
-    output_lst = output
+def parse_output(output_lst):
+    
     # Set the header row to the first row in the list
     header = output_lst[0]
+
     # Rename the "1K-block" header to "Size"
     header[1] = 'Size'
 
@@ -38,6 +38,7 @@ def parse_output(output):
     
     # Loop over the list
     for idx, col in enumerate(output_lst[1:]):
+        # Alright, now we break everything down into it's individual cells
         filesys = col[0]
         total_size_all += int(col[1])
         total_used += int(col[2])
