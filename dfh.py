@@ -61,6 +61,7 @@ def parse_output(output):
     # output the reformated df -h output.
     print(tabulate(new_lst,headers="firstrow"))
 
+
 try:
     result = subprocess.run(cmd, check=True, capture_output=True)
     output_string = result.stdout.decode().splitlines()
