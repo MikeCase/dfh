@@ -48,6 +48,8 @@ def parse_output(output_lst):
         size_avail, a_unit = format_bytes(int(col[3]))                
         perc_used = col[4]
         mounted_at = col[5]
+
+        # Append to the new list.
         new_lst.append([filesys, f"{size_total:.2f} {t_unit}", f"{size_used:.2f} {u_unit}", f"{size_avail:.2f} {a_unit}", perc_used, mounted_at])
     
     # Calculate totals
